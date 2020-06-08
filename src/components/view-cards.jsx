@@ -8,11 +8,11 @@ function Card(props) {
           <div className="card">
             <div className="card-body bg-dark">
               <h5 className="card-title title-custom">Question:</h5>
-              <p className="card-text text-custom">{card.question}</p>
+              <p className="card-text text-white">{card.question}</p>
             </div>
             <div className="card-body bg-secondary">
               <h5 className="card-title title-custom">Answer:</h5>
-              <p className="card-text text-custom">{card.answer}</p>
+              <p className="card-text text-white">{card.answer}</p>
             </div>
           </div>
         </div>
