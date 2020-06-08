@@ -8,10 +8,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      view: 'view-cards'
+      view: 'view-cards',
+      cards: []
     }
     this.getView = this.getView.bind(this)
     this.setView = this.setView.bind(this)
+    this.saveCards = this.saveCards.bind(this)
   }
 
   componentDidMount() {
@@ -19,10 +21,9 @@ class App extends Component {
   }
 
   getView() {
-    console.log(this.state.view)
     switch(this.state.view) {
       case 'create-card':
-        return <CreateCard />;
+        return <CreateCard onSubmit={this.saveCards} />;
       case 'review-cards':
         return <Review />;
       case 'view-cards':
@@ -33,13 +34,20 @@ class App extends Component {
   }
 
   setView() {
-    console.log(event.target.id)
     this.setState({
       view: event.target.id
     })
   }
 
+  saveCards(card) {
+    let storage = window.localStorage
+    storage.setItem('flash-cards', card)
+    this.setState({ cards: [...this.state.cards,card] })
+  }
+
+
   render() {
+    console.log('Create From App:', this.state.cards)
     return (
       <div>
         <Nav active={this.state.view} setView={this.setView} />
