@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       view: 'view-cards',
-      cards: JSON.parse(localStorage.getItem('flash-cards')) ? JSON.parse(localStorage.getItem('flash-cards')) : []
+      cards: JSON.parse(localStorage.getItem('flash-cards')) || []
     }
     this.getView = this.getView.bind(this)
     this.setView = this.setView.bind(this)
