@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 function Card(props) {
-  console.log(props.cards)
   return (
     props.cards.map((card, index) => {
       return (
