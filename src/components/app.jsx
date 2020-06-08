@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       view: 'view-cards',
-      cards: []
+      cards: JSON.parse(localStorage.getItem('flash-cards')) || []
     }
     this.getView = this.getView.bind(this)
     this.setView = this.setView.bind(this)
@@ -40,10 +40,9 @@ class App extends Component {
   }
 
   saveCards(card) {
-    let storage = window.localStorage
     const cardsArr = [...this.state.cards, card]
     this.setState({ cards: cardsArr })
-    storage.setItem('flash-cards', JSON.stringify(cardsArr))
+    localStorage.setItem('flash-cards', JSON.stringify(cardsArr))
   }
 
   render() {
