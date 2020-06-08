@@ -41,10 +41,10 @@ class App extends Component {
 
   saveCards(card) {
     let storage = window.localStorage
-    storage.setItem('flash-cards', card)
-    this.setState({ cards: [...this.state.cards,card] })
+    const cardsArr = [...this.state.cards, card]
+    this.setState({ cards: cardsArr })
+    storage.setItem('flash-cards', JSON.stringify(cardsArr))
   }
-
 
   render() {
     console.log('Create From App:', this.state.cards)
