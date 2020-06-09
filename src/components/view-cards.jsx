@@ -23,8 +23,7 @@ function Card(props) {
 
 class ViewCards extends Component {
   render() {
-    const cards = JSON.parse(localStorage.getItem('flash-cards'))
-    const element = cards
+    const element = this.props.cards
     ? (
         <div className="container col-sm-10">
           <div className="row mb-3">
@@ -34,7 +33,7 @@ class ViewCards extends Component {
           </div>
           <div className="row row-cols-1 row-cols-md-3">
             {
-              <Card cards={cards} />
+              <Card cards={this.props.cards} />
             }
           </div>
         </div>
