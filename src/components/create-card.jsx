@@ -48,7 +48,7 @@ class CreateCard extends Component {
   }
 
   render() {
-    const {question, answer} = this.state
+    const { question, answer } = this.state
     return (
       <div className="container col-sm-8">
         <div className="row">
@@ -59,7 +59,7 @@ class CreateCard extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="row mb-2">
             <div className="col-sm">
-              <label className="w-100">Questions:</label>
+              <label className="w-100">Question:</label>
               <textarea className="w-100" value={question} required onChange={this.handleQuestionChange} />
             </div>
           </div>

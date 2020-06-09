@@ -22,7 +22,6 @@
 }
 
 .progress-custom {
-  margin-bottom: -40px;
   height: 0.3rem;
 }
 
@@ -36,27 +35,31 @@
   height: 100%;
   overflow: auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.7);
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(250, 250, 250);
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  border: 1px solid black;
+  width: 70%;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+@media (max-width: 1199.98px) {
+
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 767.98px) {
+  .content {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 575.98px) {
+
 }

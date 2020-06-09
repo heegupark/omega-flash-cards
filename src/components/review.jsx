@@ -1,42 +1,6 @@
 import React, { Component } from 'react'
-
-function Progress(props) {
-  return (
-    <div className="progress progress-custom mt-5">
-      <div className="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style={{ width: `${props.progress}%` }} aria-valuenow={props.progress} aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-  )
-}
-
-function Carousel(props) {
-  const { cards, active, isClicked, prevCard, nextCard, handleClick } = props
-  return (
-    cards.map((card,index) => {
-      const text = isClicked ? card.answer : card.question
-      const bgClass = isClicked ? 'bg-secondary' : 'bg-dark'
-      return active === index
-        ? (
-          <div key={index}>
-            <div className={`carousel-item active w-100 mt-5 text-center ${bgClass} content`} onClick={handleClick}>
-              <p>{text}</p>
-            </div>
-            <a className="carousel-control-prev prev-custom" href="#carousel" role="button" data-slide="prev" onClick={prevCard}>
-              <i className="fas fa-chevron-left"></i>
-            </a>
-            <a className="carousel-control-next next-custom" href="#carousel" role="button" data-slide="next" onClick={nextCard}>
-              <i className="fas fa-chevron-right"></i>
-            </a>
-          </div>
-        )
-        : (
-          <div key={index}>
-            <div className="carousel-item ">
-            </div>
-          </div>
-        )
-    })
-  )
-}
+import ProgressBar from './progress-bar'
+import Carousel from './carousel'
 
 class Review extends Component {
   constructor(props) {
@@ -61,7 +25,6 @@ class Review extends Component {
       isClicked: false
     }));
     this.calculateProgress(prev)
-
   }
 
   nextCard() {
@@ -76,8 +39,8 @@ class Review extends Component {
   }
 
   handleClick() {
-    this.setState({isClicked: !this.state.isClicked})
-    this.calculateProgress(this.state.active+1)
+    this.setState({ isClicked: !this.state.isClicked })
+    this.calculateProgress(this.state.active + 1)
   }
 
   componentDidMount() {
@@ -85,29 +48,27 @@ class Review extends Component {
   }
 
   calculateProgress(page) {
-    const {active, isClicked, progress} = this.state
+    const { active, isClicked, progress } = this.state
     let newProgress = Math.floor((page) / Number(this.props.cards.length) * 100)
-    this.setState({ progress: newProgress})
+    this.setState({ progress: newProgress })
   }
 
   render() {
-    const {cards} = this.props
-    const {active, isClicked, progress } = this.state
-    const {prevCard, nextCard, handleClick } = this
+    const { cards } = this.props
+    const { active, isClicked, progress } = this.state
+    const { prevCard, nextCard, handleClick } = this
     return (
       <div className="container col-sm-10">
-        <div className="row">
+        <div className="row mb-5">
           <div className="col-sm">
             <h1 className="text-center">Review Cards</h1>
           </div>
         </div>
-
         <div className="row">
           <div className="col-sm p-0">
             <div id="carousel" className="carousel slide" data-ride="carousel">
+              <ProgressBar progress={progress} />
               <div className="carousel-inner">
-                <Progress progress={progress} />
-
                 <Carousel
                   active={active}
                   cards={cards}

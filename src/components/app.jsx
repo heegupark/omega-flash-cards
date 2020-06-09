@@ -15,23 +15,21 @@ class App extends Component {
     this.setView = this.setView.bind(this)
     this.saveCards = this.saveCards.bind(this)
     this.setActiveCard = this.setActiveCard.bind(this)
-    this.deleteCard = this.deleteCard.bind(this)
-  }
-
-  componentDidMount() {
-    this.getView()
+    this.handleDeleteCard = this.handleDeleteCard.bind(this)
+    this.handleUpdateCard = this.handleUpdateCard.bind(this)
   }
 
   getView() {
-    const cards = JSON.parse(localStorage.getItem('flash-cards'))
-
-    switch(this.state.view) {
+    const { view, cards } = this.state
+    console.log('aaa', cards)
+    const { saveCards, setActiveCard, handleUpdateCard, handleDeleteCard } = this
+    switch (view) {
       case 'create-card':
-        return <CreateCard onSubmit={this.saveCards} />;
+        return <CreateCard onSubmit={saveCards} />;
       case 'review-cards':
-        return <Review cards={cards} setActiveCard={this.setActiveCard} />;
+        return <Review cards={cards} setActiveCard={setActiveCard} />;
       case 'view-cards':
-        return <ViewCards cards={cards} deleteCard={this.deleteCard} />;
+        return <ViewCards cards={cards} handleUpdateCard={handleUpdateCard} handleDeleteCard={handleDeleteCard} />;
       default:
         return null;
     }
@@ -51,18 +49,24 @@ class App extends Component {
 
   setActiveCard(index) {
     const cards = [...this.state.cards]
-    return cards.filter((card,i) => i === index)
+    return cards.filter((card, i) => i === index)
   }
 
-  deleteCard(index) {
+  handleDeleteCard(id) {
     const cardsArr = [...this.state.cards]
-    cardsArr.splice(index, 1)
+    cardsArr.splice(id, 1)
+    localStorage.setItem('flash-cards', JSON.stringify(cardsArr))
+    this.setState({ cards: cardsArr })
+  }
+
+  handleUpdateCard(id, update) {
+    const cardsArr = [...this.state.cards]
+    cardsArr.splice(id, 1, update)
     this.setState({ cards: cardsArr })
     localStorage.setItem('flash-cards', JSON.stringify(cardsArr))
   }
 
   render() {
-    console.log('Create From App:', this.state.cards)
     return (
       <div>
         <Nav active={this.state.view} setView={this.setView} />
