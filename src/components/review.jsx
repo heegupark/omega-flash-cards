@@ -20,11 +20,11 @@ function Carousel(props) {
               </div>
               )
             }
-            <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" onClick={prevCard}>
+            <a className="carousel-control-prev" href="#carousel" role="button" data-slide="prev" onClick={prevCard}>
               <span className="carousel-control-prev-icon" aria-hidden="true"><i className="fas fa-chevron-left"></i></span>
               <span className="sr-only">Previous</span>
             </a>
-            <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" onClick={nextCard}>
+            <a className="carousel-control-next" href="#carousel" role="button" data-slide="next" onClick={nextCard}>
               <span className="carousel-control-next-icon" aria-hidden="true"><i className="fas fa-chevron-right"></i></span>
               <span className="sr-only">Next</span>
             </a>
@@ -86,7 +86,7 @@ class Review extends Component {
         </div>
         <div className="row">
           <div className="col-sm">
-            <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+            <div id="carousel" className="carousel slide" data-ride="carousel">
               <div className="carousel-inner">
                 <Carousel
                   active={this.state.active}
