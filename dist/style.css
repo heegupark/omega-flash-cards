@@ -1,3 +1,18 @@
 .title-custom {
   color: rgb(152, 152, 152);
 }
+
+.content {
+  height: 40vh;
+  color: white;
+  cursor: pointer;
+}
+
+.content > p {
+  font-size: 32px;
+  margin-top: 15vh;
+}
+
+.content-hide {
+  width: 0;
+}
