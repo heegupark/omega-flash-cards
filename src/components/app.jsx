@@ -15,6 +15,7 @@ class App extends Component {
     this.setView = this.setView.bind(this)
     this.saveCards = this.saveCards.bind(this)
     this.setActiveCard = this.setActiveCard.bind(this)
+    this.deleteCard = this.deleteCard.bind(this)
   }
 
   componentDidMount() {
@@ -30,7 +31,7 @@ class App extends Component {
       case 'review-cards':
         return <Review cards={cards} setActiveCard={this.setActiveCard} />;
       case 'view-cards':
-        return <ViewCards cards={cards} />;
+        return <ViewCards cards={cards} deleteCard={this.deleteCard} />;
       default:
         return null;
     }
@@ -51,6 +52,13 @@ class App extends Component {
   setActiveCard(index) {
     const cards = [...this.state.cards]
     return cards.filter((card,i) => i === index)
+  }
+
+  deleteCard(index) {
+    const cardsArr = [...this.state.cards]
+    cardsArr.splice(index, 1)
+    this.setState({ cards: cardsArr })
+    localStorage.setItem('flash-cards', JSON.stringify(cardsArr))
   }
 
   render() {
