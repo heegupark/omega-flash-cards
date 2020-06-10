@@ -109,7 +109,6 @@ class Card extends Component {
   render() {
     const { id } = this.props
     const { isUpdate, isDelete, selectedID, answer, question } = this.state
-
     const {
       handleConfirmUpdate,
       handleUpdateStart,
@@ -119,8 +118,6 @@ class Card extends Component {
       handleDeleteCancel,
       handleQuestionChange,
       handleAnswerChange } = this
-    console.log('vvv', answer, question)
-
     return (
       <div className="col mb-4">
         <div className="card">
