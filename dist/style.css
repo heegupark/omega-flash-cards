@@ -3,11 +3,17 @@ body {
 }
 
 .bg {
-  min-height: 88vh;
+  min-height: 92vh;
 }
 
 .title-custom {
   color: rgb(152, 152, 152);
+}
+
+.ofc {
+  color: goldenrod;
+  text-shadow: 1px 1px black;
+  margin: 0;
 }
 
 .content {

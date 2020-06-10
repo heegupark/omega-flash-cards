@@ -6,6 +6,7 @@ class Nav extends Component {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-primary bg-secondary">
+        <a className="navbar-brand" href="/"><p className="ofc">O-Flash</p></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span><i className="fas fa-bars"></i></span>
         </button>
