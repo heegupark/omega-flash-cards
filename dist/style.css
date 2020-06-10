@@ -2,6 +2,10 @@ body {
   background-color: rgba(0,0,0,0.9);
 }
 
+.bg {
+  min-height: 88vh;
+}
+
 .title-custom {
   color: rgb(152, 152, 152);
 }
@@ -61,6 +65,11 @@ body {
   border: 1px solid white;
   width: 70%;
   color: white;
+}
+
+.omega-footer {
+  text-align: center;
+  color: gold;
 }
 
 @media (max-width: 1199.98px) {
