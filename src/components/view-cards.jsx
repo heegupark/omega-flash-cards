@@ -5,13 +5,12 @@ import Modal from './modal'
 class ViewCards extends Component {
   render() {
     const { cards, handleUpdateCard, handleDeleteCard } = this.props
-    console.log('bbb', cards)
     return cards
       ? (
         <div className="container col-sm-10">
-          <div className="row mb-3">
+          <div className="row mb-2">
             <div className="col-sm">
-              <h1 className="text-center">My Cards</h1>
+              <h2 className="text-center text-light mt-3 mb-3">My Cards</h2>
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-3">
