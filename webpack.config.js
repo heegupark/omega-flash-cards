@@ -22,7 +22,7 @@ module.exports = {
   },
   devServer: {
     contentBase: join(__dirname, 'dist'),
-    port: 3000,
+    port: 3030,
     host: '0.0.0.0',
     stats: 'minimal'
   }

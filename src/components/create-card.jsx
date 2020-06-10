@@ -51,29 +51,40 @@ class CreateCard extends Component {
     const { question, answer } = this.state
     return (
       <div className="container col-sm-8">
-        <div className="row">
+        <div className="row mb-2 mt-3">
           <div className="col-sm">
-            <h1 className="text-center">Create New Card</h1>
+            <h2 className="text-center text-light">Create New Card</h2>
           </div>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="row mb-2">
             <div className="col-sm">
-              <label className="w-100">Question:</label>
-              <textarea className="w-100" value={question} required onChange={this.handleQuestionChange} />
+              <label className="w-100 text-light">Question:</label>
+              <textarea
+                required
+                autoFocus
+                className="w-100 bg-dark text-light"
+                value={question}
+                rows="3"
+                onChange={this.handleQuestionChange} />
             </div>
           </div>
           <div className="row mb-2">
             <div className="col-sm">
-              <label className="w-100">Answer:</label>
-              <textarea className="w-100" value={answer} required onChange={this.handleAnswerChange} />
+              <label className="w-100 text-light">Answer:</label>
+              <textarea
+                required
+                className="w-100 bg-dark text-light"
+                value={answer}
+                rows="3"
+                onChange={this.handleAnswerChange} />
             </div>
           </div>
           <div className="row">
             <div className="col-sm">
               <div className="float-right">
-                <button type="button" className="btn btn-outline-danger ml-2" onClick={this.handleCancel}>Cancel</button>
-                <button type="submit" className="btn btn-outline-primary ml-2">Save Card</button>
+                <button type="submit" className="btn btn-primary mr-1 save-btn-custom">Save</button>
+                <button type="button" className="btn btn-danger ml-1 save-cancel-btn-custom" onClick={this.handleCancel}>Cancel</button>
               </div>
             </div>
           </div>

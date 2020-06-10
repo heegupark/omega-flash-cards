@@ -59,9 +59,9 @@ class Review extends Component {
     const { prevCard, nextCard, handleClick } = this
     return (
       <div className="container col-sm-10">
-        <div className="row mb-5">
+        <div className="row mb-2">
           <div className="col-sm">
-            <h1 className="text-center">Review Cards</h1>
+            <h2 className="text-center text-light mt-3 mb-3">Review Cards</h2>
           </div>
         </div>
         <div className="row">

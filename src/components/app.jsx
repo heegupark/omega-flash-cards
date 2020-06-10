@@ -21,7 +21,6 @@ class App extends Component {
 
   getView() {
     const { view, cards } = this.state
-    console.log('aaa', cards)
     const { saveCards, setActiveCard, handleUpdateCard, handleDeleteCard } = this
     switch (view) {
       case 'create-card':

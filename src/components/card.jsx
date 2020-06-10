@@ -144,19 +144,24 @@ class Card extends Component {
                 <Modal
                   element={(
                     <div className="col-sm">
-                      <label className="w-100 text-left font-weight-bold">Question:</label>
+                      <p className="font-weight-bold mb-2">Update Card</p>
+                      <hr className="text-white border-bottom"></hr>
+                      <label className="w-100 text-left font-weight-bold text-info">Question:</label>
                       <textarea
                         autoFocus
                         required
-                        className="w-100"
+                        className="w-100 textarea-custom"
+                        rows="3"
                         value={question}
                         onChange={this.handleQuestionChange} />
-                      <label className="w-100 text-left font-weight-bold mt-3">Answer:</label>
+                      <label className="w-100 text-left font-weight-bold text-warning mt-3">Answer:</label>
                       <textarea
                         required
-                        className="w-100"
+                        className="w-100 textarea-custom"
+                        rows="3"
                         value={answer}
                         onChange={this.handleAnswerChange} />
+                      <hr className="text-white border-bottom"></hr>
                     </div>
                   )}
                   btn1={handleConfirmUpdate}
@@ -173,9 +178,11 @@ class Card extends Component {
               ? <Modal
                 element={(
                   <div className="col-sm">
-                    <p className="font-weight-bold border-bottom">Are you sure you want to delete this card?</p>
-                    <p><span className="font-weight-bold">Q:</span> {question}</p>
-                    <p><span className="font-weight-bold">A:</span> {answer}</p>
+                    <p className="font-weight-bold mb-2">Do you really want to delete this card?</p>
+                    <hr className="text-white border-bottom"></hr>
+                    <p><span className="font-weight-bold text-info">Q:</span> {question}</p>
+                    <p><span className="font-weight-bold text-warning">A:</span> {answer}</p>
+                    <hr className="text-white border-bottom"></hr>
                   </div>
                 )}
                 btn1={handleConfirmDelete}

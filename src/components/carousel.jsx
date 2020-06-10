@@ -6,7 +6,7 @@ class Carousel extends Component {
     return (
       cards.map((card, index) => {
         const text = isClicked ? card.answer : card.question
-        const bgClass = isClicked ? 'bg-secondary' : 'bg-dark'
+        const bgClass = isClicked ? 'bg-secondary text-black' : 'bg-dark text-white'
         return active === index
           ? (
             <div key={index}>
@@ -21,7 +21,7 @@ class Carousel extends Component {
                 role="button"
                 data-slide="prev"
                 onClick={prevCard}>
-                <i className="fas fa-chevron-left"></i>
+                <i className="fas fa-chevron-left text-warning"></i>
               </a>
               <a
                 className="carousel-control-next next-custom"
@@ -29,7 +29,7 @@ class Carousel extends Component {
                 role="button"
                 data-slide="next"
                 onClick={nextCard}>
-                <i className="fas fa-chevron-right"></i>
+                <i className="fas fa-chevron-right text-warning"></i>
               </a>
             </div>
           )
