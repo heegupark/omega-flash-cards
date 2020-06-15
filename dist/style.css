@@ -6,13 +6,8 @@ body {
   min-height: 92vh;
 }
 
-.title-custom {
-  color: rgb(152, 152, 152);
-}
-
 .ofc {
   color: white;
-  text-shadow: 1px 1px black;
   margin: 0;
 }
 

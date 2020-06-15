@@ -119,14 +119,14 @@ class Card extends Component {
       handleQuestionChange,
       handleAnswerChange } = this
     return (
-      <div className="col mb-4">
+      <div className="col mb-4 card-deck mx-auto">
         <div className="card">
-          <div className="card-body bg-dark" >
-            <h5 className="card-title title-custom">Question:</h5>
+          <div className="card-header bg-dark" >
+            <h5 className="card-title text-secondary">Question:</h5>
             <p className="card-text text-white">{this.props.question}</p>
           </div>
           <div className="card-body bg-secondary">
-            <h5 className="card-title title-custom">Answer:</h5>
+            <h5 className="card-title text-dark">Answer:</h5>
             <p className="card-text text-white">{this.props.answer}</p>
           </div>
           <div className="card-footer bg-dark text-center">
