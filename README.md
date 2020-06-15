@@ -21,7 +21,7 @@
 4. User can update a card.
 
 ## Lessons Learned
-1. Various ways of accessubg local storages using React function and dynamically display read data using React virtual DOM functions
+1. Various ways of accessubg local storages using React function and dynamically display data using React virtual DOM functions
 2. Experienced to deal with various functions of React virtual DOM
 3. Experienced to effectively use React and Bootstrap for displaying data
 4. React and JavaScript Object Oriented Programming for better functionalities and to increase the re-usage of codes
